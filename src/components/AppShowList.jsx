@@ -3,6 +3,7 @@ export default function AppShowList({ items }) {
         <>
             <div className="container">
                 <div className="row">
+                    <h2>Articles</h2>
                     <ul className="list-group ">
                         {
                             items.map(item =>
