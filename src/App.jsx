@@ -14,7 +14,7 @@ function App() {
   return (
     <>
 
-      <AppShowList items={liveArticles} />
+      <AppShowList items={liveArticles} setItems={setLiveArticles}/>
       <AppForm items={liveArticles} setItems={setLiveArticles} />
     </>
   )
