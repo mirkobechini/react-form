@@ -1,15 +1,13 @@
 import { useState } from 'react'
 
-export default function AppForm({ items, setItems }) {
-
+export default function AppForm({setItems }) {
+    
     const [newItem, setNewItem] = useState('')
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(newItem);
         if (validateTitle(newItem)) {
-            const newId = items[items.length - 1].id + 1
-            setItems([...items, { id: newId, title: newItem, content: "" }])
+            setItems(newItem)
             console.log(`L'articolo ${newItem} è stato aggiunto`);
         } else {
             alert("Il titolo è troppo corto, inserirne uno di almeno 5 caratteri")
