@@ -11,16 +11,21 @@ function App() {
 
   const [liveArticles, setLiveArticles] = useState(articles)
 
-  function addLiveArticles(newArticle) {
+  function addLiveArticle(newArticle) {
     const newId = liveArticles[liveArticles.length - 1].id + 1
     setLiveArticles([...liveArticles, { id: newId, title: newArticle, content: "" }])
+  }
+
+  function delLiveArticle(id) {
+    const newArticles = liveArticles.filter(liveArticle => liveArticle.id != id)
+    setLiveArticles(newArticles)
   }
 
   return (
     <>
 
-      <AppShowList items={liveArticles} setItems={setLiveArticles} />
-      <AppForm setItems={addLiveArticles} />
+      <AppShowList items={liveArticles} delItem={delLiveArticle} />
+      <AppForm setItems={addLiveArticle} />
     </>
   )
 }

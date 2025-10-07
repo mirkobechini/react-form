@@ -1,8 +1,7 @@
-export default function AppShowList({ items, setItems }) {
+export default function AppShowList({ items, delItem }) {
 
     function handleTrash(id) {
-        const newItems = items.filter(item => item.id != id)
-        setItems(newItems)
+        delItem(id)
         console.log(`L'articolo con id ${id} è stato cancellato`);
     }
 
